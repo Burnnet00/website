@@ -21,13 +21,13 @@ def index(request):
         'price_t': price_t
     }
     return render(request, "./index.html", dict_ob)
-def thx(request):
+def thx(request):#форма обробки пост запиту
     if request.POST:
         name = request.POST['name']#отримуемо параметри з полями name, phone
         phone = request.POST['phone']
         element = Orders(o_name=name, o_phone=phone)#створюємо новий екземпляр класу Ордерс, присвоюємо поля
         element.save()#зберігаємо методом сейв
-        sendTelegram()#функція відправки повідомлення в телеграм
+        sendTelegram(tb_name=name, tb_phone=phone)#функція відправки повідомлення, додаємо іменовані параметри із пост запиту(імя та тел) та відпавляємо в телеграм
         return render(request, 'thx.html', {
             'name': name,
             'phone': phone,
