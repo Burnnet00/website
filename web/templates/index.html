@@ -1,12 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>New page</h1>
-{{a}}
-<h1>{{text}}</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My{% endblock %}
+{% block content %}
+
+
+<img src="{% static 'web\img\1.png' %}" alt="" height="300">
+<h2>Hello</h2>
+    <section>
+        {% for sl in slider %}
+        <div class="car" data-ride="carousel-item {{ el.c_css }}">
+
+            <div class="item">
+                <img src="{{ sl.c_img.url }}" class="d-block w-100" alt="">
+                <h5>{{ sl.c_title }}</h5>
+                <p>{{ sl.c_text }}</p>
+
+        </div>
+        <div>
+            <p>Old{{pk1}}</p>
+            <br>
+            <p>New{{pk2}}</p>
+        </div>
+        <div>
+            {% if price_t %}
+            <table border="1">
+                <tr>
+
+                    <th>price</th>
+                    <th>old</th>
+                    <th>new</th>
+                </tr>
+                {% for or in price_t %}
+                <tr>
+
+                    <th>{{ or.p_title }}</th>
+                    <th>{{ or.p_old }}</th>
+                    <th>{{ or.p_new }}</th>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else%}
+            Даних немає
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+    </section>
+{% include 'old.html' %}
+{% endblock %}

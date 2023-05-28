@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>New user</h1>
+
+<form action="{% url 'thx' %}" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Готово</button>
+
+</form>
+<br>
+<br>
+<br>
+
+
+{% if orders %}
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>phone</th>
+        <th>data</th>
+    </tr>
+    {% for order in orders %}
+    <tr>
+        <th>{{ order.id }}</th>
+        <th>{{ order.o_name }}</th>
+        <th>{{ order.o_phone }}</th>
+        <th>{{ order.o_date }}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% else%}
+Даних немає
+{% endif %}
+</body>
+</html>

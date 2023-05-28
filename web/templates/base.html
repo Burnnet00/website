@@ -1,0 +1,16 @@
+{% load static%}
+
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}">
+</head>
+<body>
+<h1>Верх</h1>
+{% block content %}
+
+{% endblock %}
+<h2>Низ</h2>
+</body>
+</html>
