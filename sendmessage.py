@@ -1,8 +1,8 @@
 import requests
 
-token = "6065387831:AAFgmhoD6Ank5TPs2-TbNPPtbOLb0iGyjcw"#"826321393:AAGOrh6yQ2y8MjsZDNR7539VAHroTUdVQ9s"
+token = "6065387831:AAFgmhoD6Ank5TPs2-TbNPPtbOLb0iGyjcw"
 chat_id = "-991007410"
-text = "Test_2"
+text = "Test_3"
 
 #https://api.telegram.org/bot
 

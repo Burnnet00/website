@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>New user</h1>
-
+<h3>Вітаю!</h3>
+Залиште контакти і ми вам зателефонуємо
 <form action="{% url 'thx' %}" method="POST">
     {% csrf_token %}
     {{form.as_p}}
