@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+
 <h3>Вітаю!</h3>
 Залиште контакти і ми вам зателефонуємо
 <form action="{% url 'thx' %}" method="POST">
@@ -39,5 +37,4 @@
 {% else%}
 Даних немає
 {% endif %}
-</body>
-</html>
+{% endblock %}

@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <title>Thx you</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block content %}
 
 <section>
 {% if name %}
@@ -15,5 +12,4 @@
     <h1>Форма невірна</h1>
 {% endif %}
 </section>
-</body>
-</html>
+{% endblock %}
