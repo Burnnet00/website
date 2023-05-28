@@ -6,15 +6,16 @@
 
 <img src="{% static 'web\img\1.png' %}" alt="" height="300">
 <h2>Hello</h2>
-    <section>
-        {% for sl in slider %}
-        <div class="car" data-ride="carousel-item {{ el.c_css }}">
+<section>
+    {% for sl in slider %}
+    <div class="car" data-ride="carousel-item {{ el.c_css }}">
 
-            <div class="item">
-                <img src="{{ sl.c_img.url }}" class="d-block w-100" alt="">
-                <h5>{{ sl.c_title }}</h5>
-                <p>{{ sl.c_text }}</p>
-
+        <div class="item">
+            <img src="{{ sl.c_img.url }}" class="d-block w-100" alt="">
+            <h5>{{ sl.c_title }}</h5>
+            <p>{{ sl.c_text }}</p>
+    </div>
+        {% endfor %}
         </div>
         <div>
             <p>Old{{pk1}}</p>
@@ -25,7 +26,6 @@
             {% if price_t %}
             <table border="1">
                 <tr>
-
                     <th>price</th>
                     <th>old</th>
                     <th>new</th>
@@ -43,9 +43,7 @@
             Даних немає
             {% endif %}
 
-        </div>
 
-        {% endfor %}
-    </section>
+</section>
 {% include 'old.html' %}
 {% endblock %}
