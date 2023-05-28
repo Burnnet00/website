@@ -3,6 +3,7 @@ from .models import Orders
 from .forms import OrdersForm
 from cms.models import CmsSlider
 from price.models import PriceCard, PriceTable
+from telebot.sendmessage import sendTelegram
 
 def index(request):
     orders = Orders.objects.all()
@@ -26,6 +27,7 @@ def thx(request):
         phone = request.POST['phone']
         element = Orders(o_name=name, o_phone=phone)#створюємо новий екземпляр класу Ордерс, присвоюємо поля
         element.save()#зберігаємо методом сейв
+        sendTelegram()#функція відправки повідомлення в телеграм
         return render(request, 'thx.html', {
             'name': name,
             'phone': phone,
