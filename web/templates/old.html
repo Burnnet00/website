@@ -1,8 +1,11 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block title %}Contact{% endblock %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}Contact{% endblock %}
+</head>
+<body>
 {% block content %}
-
 <h3>Вітаю!</h3>
 Залиште контакти і ми вам зателефонуємо
 <form action="{% url 'thx' %}" method="POST">
@@ -38,3 +41,5 @@
 Даних немає
 {% endif %}
 {% endblock %}
+</body>
+</html>
